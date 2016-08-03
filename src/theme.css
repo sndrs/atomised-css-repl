@@ -19,15 +19,13 @@
 .CodeMirror.cm-s-atomised .cm-qualifier,
 .CodeMirror.cm-s-atomised .cm-def,
 .CodeMirror.cm-s-atomised .cm-tag,
-.CodeMirror.cm-s-atomised .cm-variable-3 {
-    color: red;
-}
-.CodeMirror.cm-s-atomised .cm-property {
-
-}
+.CodeMirror.cm-s-atomised .cm-variable-3,
 .CodeMirror.cm-s-atomised .cm-keyword,
 .CodeMirror.cm-s-atomised .cm-string {
-    color: red;
+    color: blue;
+}
+.CodeMirror.cm-s-atomised .cm-property {
+    color: black;
 }
 .CodeMirror.cm-s-atomised .cm-comment {
     text-transform: uppercase;

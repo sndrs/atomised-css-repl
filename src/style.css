@@ -44,6 +44,10 @@ html, body {
     position: relative;
 }
 
+.header a:hover {
+    text-decoration: underline;
+}
+
 .version {
     float: right;
     top: 4px;
