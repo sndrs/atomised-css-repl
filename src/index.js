@@ -1,9 +1,9 @@
 import CodeMirror from 'codemirror';
 import 'codemirror/mode/css/css';
 import 'codemirror/mode/javascript/javascript';
-import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/solarized.css';
+import 'codemirror/lib/codemirror.css!css';
 import 'codemirror/addon/edit/closebrackets';
+import './theme.css!css';
 
 import demo from './demo.css!text';
 
@@ -11,27 +11,27 @@ const outputMessages = document.querySelector('.output-messages');
 
 const editor = CodeMirror(document.querySelector('.editor'), {
     mode: 'css',
-    theme: 'solarized dark',
-    lineNumbers: true,
+    lineNumbers: false,
     autofocus: true,
     indentUnit: 4,
     autoCloseBrackets: true,
-    lineWrapping: true
+    lineWrapping: true,
+    theme: 'atomised'
 });
 
 const outputCSS = CodeMirror(document.querySelector('.output-css'), {
     mode: 'css',
-    theme: 'solarized light',
-    lineNumbers: true,
+    lineNumbers: false,
     readOnly: 'nocursor',
-    value: 'waking up the API...'
+    value: 'waking up the API...',
+    theme: 'atomised'
 });
 
 const outputJSON = CodeMirror(document.querySelector('.output-json'), {
     mode: {name: "javascript", json: true},
-    theme: 'solarized light',
-    lineNumbers: true,
-    readOnly: 'nocursor'
+    lineNumbers: false,
+    readOnly: 'nocursor',
+    theme: 'atomised'
 });
 
 function atomise () {
@@ -50,8 +50,8 @@ function atomise () {
             .replace(/(",)"/g, '$1 "')
             .replace(/(})$/, '\n$1')
         );
-        outputMessages.innerHTML = `${messages.slice(0, 1)}<br>${messages.pop()}<br>${messages.length} rules could not be atomised.`;
-        document.querySelector('.version').innerHTML = `v${version}`;
+        outputMessages.innerHTML = `${messages.slice(0, 1)} / ${messages.slice(-1)} / ${messages.length - 2} rules could not be atomised.`.replace(/\.|:/g, '');
+        document.querySelector('.version').innerHTML = `v${version} /`;
     })
 }
 

@@ -1,0 +1,48 @@
+.CodeMirror.cm-s-atomised {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0;
+    right: 0px;
+    height: auto;
+    font-family: menlo, monospace;
+    font-size: 12px;
+    background-color: white;
+}
+.CodeMirror.cm-s-atomised .CodeMirror-linenumber {
+    color: #eee;
+}
+.CodeMirror.cm-s-atomised .CodeMirror-code {
+    color: black;
+    background-color: white;
+}
+.CodeMirror.cm-s-atomised .cm-qualifier,
+.CodeMirror.cm-s-atomised .cm-def,
+.CodeMirror.cm-s-atomised .cm-tag,
+.CodeMirror.cm-s-atomised .cm-variable-3 {
+    color: red;
+}
+.CodeMirror.cm-s-atomised .cm-property {
+
+}
+.CodeMirror.cm-s-atomised .cm-keyword,
+.CodeMirror.cm-s-atomised .cm-string {
+    color: red;
+}
+.CodeMirror.cm-s-atomised .cm-comment {
+    text-transform: uppercase;
+    background: black;
+    color: white;
+}
+
+.CodeMirror.cm-s-atomised .CodeMirror-line {
+    padding: 0 1rem;
+}
+
+.CodeMirror.cm-s-atomised .CodeMirror-lines {
+    padding: 1rem 0
+}
+
+.CodeMirror.cm-s-atomised .CodeMirror-cursor {
+    border-left-color: black;
+}

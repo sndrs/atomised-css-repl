@@ -30,7 +30,7 @@
     color: blue;
 }
 
-/* handles media queries */
+/* handles at-rules */
 .red-unless-big {
     color: red;
 }
@@ -38,6 +38,12 @@
 @media (min-width: 960px) {
     .red-unless-big {
         color: blue;
+    }
+}
+
+@supports (display: flex) {
+    .flex {
+        display: flex;
     }
 }
 
