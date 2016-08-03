@@ -27,6 +27,6 @@
   },
   "scripts": {
     "start": "browser-sync start --config bs-config.js",
-    "build": "node build.js && gh-pages -d dist"
+    "build": "node build.js && gh-pages -d dist && rm -rf dist"
   }
 }
