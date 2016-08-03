@@ -1,0 +1,86 @@
+* {
+    font-family: menlo, monospace !important;
+    font-size: 12px !important;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.page,
+.output {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 1rem 2.5rem;
+    font-size: 16px !important;
+    font-weight: normal;
+}
+
+.header a {
+    color: blue;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+.code {
+    display: flex;
+    flex: 1;
+}
+
+.editor,
+.output-css,
+.output-json {
+    flex: 1;
+    height: auto;
+    position: relative;
+}
+
+.editor {
+    background-color: #002b36;
+}
+
+.output {
+    flex: 1.666;
+    border-top: 1px solid #eee8d5;
+    background-color: #fdf6e3;
+}
+
+.output-panels {
+    display: flex;
+    flex: 1;
+    position: relative;
+}
+
+.output-messages {
+    padding: .25rem .5rem;
+    background-color: #eee8d5;
+    color: hsl(46, 7%, 58%);
+    border-top: 1px solid #e4dfce;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+.CodeMirror {
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: auto  !important;
+}
+.cm-s-solarized.CodeMirror {
+    box-shadow: none !important;
+}

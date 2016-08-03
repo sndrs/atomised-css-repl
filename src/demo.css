@@ -1,0 +1,62 @@
+.red {
+    color: red;
+}
+
+/* resolves duplicate properties */
+.definitely-red {
+    color: blue;
+    color: red;
+}
+
+/* resolves overriden properties and grouped selectors */
+.red-1 {
+    color: blue;
+}
+
+.red-1, .blue-1 {
+    color: red;
+}
+
+.blue-1 {
+    color: blue;
+}
+
+/* handles pseudos */
+.red-unless-active {
+    color: red;
+}
+
+.red-unless-active:active {
+    color: blue;
+}
+
+/* handles media queries */
+.red-unless-big {
+    color: red;
+}
+
+@media (min-width: 960px) {
+    .red-unless-big {
+        color: blue;
+    }
+}
+
+/* passes un-atomiseable selectors straight through */
+body {
+    color: red;
+}
+
+.parent > .child {
+    color: red;
+}
+
+/* passes @font-faces straight through */
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('') format('woff2');
+}
+
+.red-ubuntu-mono {
+    font-family: 'Ubuntu Mono';
+    color: red;
+}

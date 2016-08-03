@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Atmoised CSS demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="page">
+        <h1 class="header">Atomised CSS demo <a href="https://github.com/atomised-css/postcss-atomised">github→</a></h1>
+        <div class="code">
+            <div class="editor"></div>
+            <div class="output">
+                <div class="output-panels">
+                    <output class="output-css"></output>
+                    <output class="output-json"></output>
+                </div>
+                <output class="output-messages">loading...</output>
+            </div>
+        </div>
+    </div>
+    <!-- app -->
+    <script src="../jspm_packages/system.js"></script>
+    <script src="../config.js"></script>
+    <script>
+    System.import('./index.js');
+    </script>
+    <!-- /app -->
+</body>
+
+</html>

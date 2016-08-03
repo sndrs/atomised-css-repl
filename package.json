@@ -1,0 +1,32 @@
+{
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gh-pages": "^0.11.0",
+    "gzip-size": "^3.0.0",
+    "gzip-size-cli": "^1.0.0",
+    "jspm": "^0.16.39",
+    "mkdirp": "^0.5.1",
+    "pify": "^2.3.0",
+    "pretty-bytes": "^3.0.1",
+    "pretty-bytes-cli": "^1.0.0",
+    "useref": "^1.2.0"
+  },
+  "jspm": {
+    "dependencies": {
+      "codemirror": "npm:codemirror@^5.17.0",
+      "css": "github:systemjs/plugin-css@^0.1.26",
+      "postcss": "npm:postcss@^5.0.21",
+      "postcss-atomised": "npm:postcss-atomised@^0.2.3",
+      "text": "github:systemjs/plugin-text@^0.0.8"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  },
+  "scripts": {
+    "start": "browser-sync start --config bs-config.js",
+    "build": "node build.js && gh-pages -d dist"
+  }
+}
