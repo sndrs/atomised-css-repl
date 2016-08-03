@@ -51,6 +51,7 @@ function atomise () {
             .replace(/(})$/, '\n$1')
         );
         outputMessages.innerHTML = `${messages.slice(0, 1)}<br>${messages.pop()}<br>${messages.length} rules could not be atomised.`;
+        document.querySelector('.version').innerHTML = `v${version}`;
     })
 }
 

@@ -36,6 +36,12 @@ html, body {
     text-decoration: none;
 }
 
+.version {
+    float: right;
+    top: 4px;
+    position: relative;
+}
+
 .code {
     display: flex;
     flex: 1;
