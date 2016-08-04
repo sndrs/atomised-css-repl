@@ -43,6 +43,14 @@ function atomise () {
         method: 'POST',
         body: editor.getValue()
     })
+    .then(res => {
+        if (!res.ok) {
+            const error = new Error(res.statusText || res.status)
+            error.response = res;
+            return Promise.reject(error);
+        }
+        return Promise.resolve(res);
+    })
     .then(res => res.json())
     .then(json => {
         const {version, map, messages, css} = json;
@@ -59,6 +67,13 @@ function atomise () {
         }
         outputMessages.innerHTML = messageString;
         versionMessage.innerHTML = `v${version} /`;
+    })
+    .catch(error => {
+        error.response.text().then(msg => {
+            outputCSS.setValue(msg);
+            outputJSON.setValue('');
+            outputMessages.innerHTML = 'er...';
+        })
     })
 }
 
