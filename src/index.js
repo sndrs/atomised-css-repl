@@ -9,6 +9,7 @@ import demo from './demo.css!text';
 
 const outputMessages = document.querySelector('.output-messages');
 const versionMessage = document.querySelector('.version');
+const storageKey = 'atomised-repl-src';
 
 const editor = CodeMirror(document.querySelector('.editor'), {
     mode: 'css',
@@ -36,8 +37,11 @@ const outputJSON = CodeMirror(document.querySelector('.output-json'), {
 });
 
 function atomise () {
-    const src = editor.getValue();
-    location.hash = escape(src);
+    const src = encodeURI(editor.getValue());
+    location.hash = src;
+    try {
+        localStorage.setItem(storageKey, src);
+    } catch (e) {};
     // fetch('http://localhost:1337', {
     fetch('https://atomised-service-sndbgazupx.now.sh', {
         method: 'POST',
@@ -81,8 +85,15 @@ const pluralise = (term, count) => count > 1 ? `${term}s` : term;
 
 editor.on('change', atomise);
 if (location.hash !== '') {
-    editor.setValue(unescape(location.hash.substring(1)))
+    editor.setValue(decodeURI(location.hash.substring(1)))
 } else {
-    editor.setValue(demo);
+    let src = demo;
+    try {
+        const stored = localStorage.getItem(storageKey);
+        if (stored) {
+            src = decodeURI(stored);
+        }
+    } catch (e) {};
+    editor.setValue(src);
 }
 
