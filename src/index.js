@@ -36,6 +36,8 @@ const outputJSON = CodeMirror(document.querySelector('.output-json'), {
 });
 
 function atomise () {
+    const src = editor.getValue();
+    location.hash = escape(src);
     // fetch('http://localhost:1337', {
     fetch('https://atomised-service-sndbgazupx.now.sh', {
         method: 'POST',
@@ -63,4 +65,9 @@ function atomise () {
 const pluralise = (term, count) => count > 1 ? `${term}s` : term;
 
 editor.on('change', atomise);
-editor.setValue(demo);
+if (location.hash !== '') {
+    editor.setValue(unescape(location.hash.substring(1)))
+} else {
+    editor.setValue(demo);
+}
+
