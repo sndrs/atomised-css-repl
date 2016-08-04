@@ -37,7 +37,7 @@ const outputJSON = CodeMirror(document.querySelector('.output-json'), {
 
 function atomise () {
     // fetch('http://localhost:1337', {
-    fetch('https://atomised-service-fmrewhuwlb.now.sh', {
+    fetch('https://atomised-service-sndbgazupx.now.sh', {
         method: 'POST',
         body: editor.getValue()
     })
