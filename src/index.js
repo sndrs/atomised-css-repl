@@ -8,6 +8,7 @@ import './theme.css!css';
 import demo from './demo.css!text';
 
 const outputMessages = document.querySelector('.output-messages');
+const versionMessage = document.querySelector('.version');
 
 const editor = CodeMirror(document.querySelector('.editor'), {
     mode: 'css',
@@ -55,7 +56,7 @@ function atomise () {
             messageString += ` / ${messages.length - 2} ${pluralise('rule', messages.length - 2)} could not be atomised.`;
         }
         outputMessages.innerHTML = messageString;
-        document.querySelector('.version').innerHTML = `v${version} /`;
+        versionMessage.innerHTML = `v${version} /`;
     })
 }
 
