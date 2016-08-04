@@ -48,7 +48,7 @@ function atomise () {
             error.response = res;
             return Promise.reject(error);
         }
-        return Promise.resolve(res);
+        return res;
     })
     .then(res => res.json())
     .then(json => {
