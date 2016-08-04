@@ -39,6 +39,12 @@
     .red-unless-big {
         color: blue;
     }
+    body {
+        color: blue;
+    }
+    p {
+        color: green;
+    }
 }
 
 @supports (display: flex) {
