@@ -50,10 +50,16 @@ function atomise () {
             .replace(/(",)"/g, '$1 "')
             .replace(/(})$/, '\n$1')
         );
-        outputMessages.innerHTML = `${messages.slice(0, 1)} / ${messages.slice(-1)} / ${messages.length - 2} rules could not be atomised.`.replace(/\.|:/g, '');
+        let messageString = `${messages.slice(0, 1)} / ${messages.slice(-1)}`.replace(/\.|:/g, '');
+        if (messages.length > 2) {
+            messageString += ` / ${messages.length - 2} ${pluralise('rule', messages.length - 2)} could not be atomised.`;
+        }
+        outputMessages.innerHTML = messageString;
         document.querySelector('.version').innerHTML = `v${version} /`;
     })
 }
+
+const pluralise = (term, count) => count > 1 ? `${term}s` : term;
 
 editor.on('change', atomise);
 editor.setValue(demo);
