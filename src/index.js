@@ -37,11 +37,6 @@ const outputJSON = CodeMirror(document.querySelector('.output-json'), {
 });
 
 function atomise () {
-    const src = encodeURI(editor.getValue());
-    location.hash = src;
-    try {
-        localStorage.setItem(storageKey, src);
-    } catch (e) {};
     // fetch('http://localhost:1337', {
     fetch('https://atomised-service-sndbgazupx.now.sh', {
         method: 'POST',
@@ -78,7 +73,12 @@ function atomise () {
             outputJSON.setValue('');
             outputMessages.innerHTML = 'er...';
         })
-    })
+    });
+    const src = encodeURI(editor.getValue());
+    location.hash = src;
+    try {
+        localStorage.setItem(storageKey, src);
+    } catch (e) {};
 }
 
 const pluralise = (term, count) => count > 1 ? `${term}s` : term;
