@@ -55,7 +55,7 @@ function atomise () {
         const {version, map, messages, css} = json;
         outputCSS.setValue(css);
         outputJSON.setValue(JSON.stringify(map)
-            .replace(/(^{|],)/g, '$1\n    ')
+            .replace(/(^{|],)/g, '$1\n  ')
             .replace(/(:)/g, '$1 ')
             .replace(/(",)"/g, '$1 "')
             .replace(/(})$/, '\n$1')
