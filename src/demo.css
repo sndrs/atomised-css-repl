@@ -1,8 +1,14 @@
-/*
-This is a demo the postcss-atomised plugin.
+/* * * * *
+
+This is a live demo of the postcss-atomised plugin.
+
 It takes a normal stylesheet (this one) and creates a new one that reduces the original to an atomic set of classes (middle column), plus a map of the original classes to the atomic ones (right hand column).
-See https://github.com/atomised-css/postcss-atomised for more information.
-*/
+
+this column is fully editable – have a play.
+
+To report issues and for more information, See https://github.com/atomised-css/postcss-atomised.
+
+ * * * * */
 
 .red {
     color: red;
